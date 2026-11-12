@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
+<html lang="ja"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>株式会社和楽 監督署調査 事前チェック</title>
@@ -8,6 +7,7 @@
   :root{
     --ink:#1f2328; --sub:#57606a; --line:#d0d7de; --bg:#ffffff; --panel:#f6f8fa;
     --hi:#b42318; --hi-bg:#fef3f2; --mid:#b54708; --mid-bg:#fffaeb; --low:#175cd3; --low-bg:#eff8ff;
+    --ok:#067647; --ok-bg:#ecfdf3;
   }
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
@@ -22,16 +22,24 @@
   .card .v{font-size:20px;font-weight:bold}
   h2{font-size:18px;border-left:5px solid var(--ink);padding-left:10px;margin:36px 0 12px}
   .item{border:1px solid var(--line);border-radius:8px;margin:0 0 14px;overflow:hidden}
-  .item header{display:flex;gap:10px;align-items:center;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line)}
+  .item header{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line)}
   .item header .no{font-weight:bold;min-width:2em}
   .item header .t{font-weight:bold;flex:1}
   .tag{font-size:12px;padding:2px 8px;border-radius:999px;white-space:nowrap}
   .tag.hi{color:var(--hi);background:var(--hi-bg);border:1px solid #fda29b}
   .tag.mid{color:var(--mid);background:var(--mid-bg);border:1px solid #fec84b}
   .tag.low{color:var(--low);background:var(--low-bg);border:1px solid #84caff}
+  .st{font-size:12px;padding:2px 8px;border-radius:4px;white-space:nowrap;font-weight:bold}
+  .st.remain{color:#fff;background:var(--hi)}
+  .st.part{color:#fff;background:var(--mid)}
+  .st.done{color:#fff;background:var(--ok)}
   .item .body{padding:10px 14px 12px}
   .item ul{margin:0;padding-left:1.3em}
   .item li{margin:2px 0}
+  .follow{margin-top:10px;border:1px solid var(--line);border-left:4px solid var(--low);background:var(--low-bg);border-radius:4px;padding:8px 12px}
+  .follow .fh{font-size:12px;font-weight:bold;color:var(--low);margin-bottom:2px}
+  .follow .rest{margin-top:6px}
+  .follow .rest b{color:var(--hi)}
   .src{font-size:12px;color:var(--sub);margin-top:6px}
   .est{font-size:12px;color:var(--mid)}
   table{width:100%;border-collapse:collapse;font-size:14px;margin:6px 0}
@@ -39,6 +47,7 @@
   th{background:var(--panel);font-weight:bold}
   td.num{text-align:right;font-variant-numeric:tabular-nums}
   .tbl-wrap{overflow-x:auto}
+  .status-list td:first-child{white-space:nowrap}
   footer{margin-top:40px;font-size:12px;color:var(--sub);border-top:1px solid var(--line);padding-top:12px}
   @media print{
     .wrap{max-width:none;padding:0}
@@ -52,37 +61,56 @@
 <h1>株式会社和楽 労働基準監督署調査 事前チェック結果</h1>
 <div class="meta">
   調査日時：令和8年11月17日（火）9:30〜（約2時間）／三島労働基準監督署（担当：林）<br>
-  照合対象期間：賃金台帳・タイムカード 令和8年4月21日〜10月20日（6期間）／作成：社会保険労務士法人キャリアデザイン
+  当日の会社側出席：久保さん（川名社長は出席しない）<br>
+  照合対象期間：賃金台帳・タイムカード 令和8年4月21日〜10月20日（6期間）／作成：社会保険労務士法人キャリアデザイン<br>
+  更新：令和8年11月12日 スタッフ確認（サイボウズ「和楽の監督署調査に向けて」コメント1〜3）を反映
 </div>
 
 <div class="summary">
-  <div class="card"><div class="k">結果に直結する問題</div><div class="v">14件</div></div>
+  <div class="card"><div class="k">まだ残っている問題</div><div class="v">13件</div></div>
+  <div class="card"><div class="k">解消（確認1点残り）</div><div class="v">1件</div></div>
   <div class="card"><div class="k">未作成・未格納の書類</div><div class="v">7件</div></div>
-  <div class="card"><div class="k">推定未払残業代（2名）</div><div class="v">約148万円</div></div>
-  <div class="card"><div class="k">休憩不足の日数</div><div class="v">66日</div></div>
+  <div class="card"><div class="k">推定未払残業代（2名・早出分を除く）</div><div class="v">約148万円</div></div>
 </div>
+
+<h2>更新の要点（11/12 スタッフ確認後）</h2>
+<div class="item"><div class="body">
+<div class="tbl-wrap"><table class="status-list">
+<tbody><tr><th>状況</th><th>項目</th><th>内容</th></tr>
+<tr><td><span class="st done">解消</span></td><td>13</td><td>渡邉ゆうこの早出日は当日の勤務8時間未満（1日単位の割増は不要）。勤怠PDFが「法定時間外」に集計している理由の確認だけ残る</td></tr>
+<tr><td><span class="st part">一部解消</span></td><td>A⑥・9</td><td>変形期間は21日起算で運用、勤務シフトはネットde顧問に登録あり → 出力すれば⑥に充てられる。就業規則の起算日・30条の総枠超えは残る</td></tr>
+<tr><td><span class="st part">一部解消</span></td><td>5</td><td>松本晃の3日は入力ミス（修正予定）。残り63日は残る</td></tr>
+<tr><td><span class="st remain">残る（追加判明）</span></td><td>6・12</td><td>鈴木秀之は6時前後から働いている日が多い（8:30前の早出は付けない運用）。松本・兼子・西郷・西島も早出を含めると定額残業の時間を超える月あり</td></tr>
+<tr><td><span class="st remain">残る</span></td><td>1・2</td><td>山田圭一朗は店長・管理監督者扱い。管理監督者なら36協定の過半数代表になれず協定が無効、管理監督者でなければ時間外の不払い</td></tr>
+<tr><td><span class="st remain">残る</span></td><td>3・4・12</td><td>松本は役職手当をみなし残業の扱い、西島・兼子はみなし残業20時間分が付いているとのことだが、給与規程に定めがない</td></tr>
+<tr><td><span class="st remain">残る</span></td><td>7</td><td>事務の方に人数を入れてしまっていた。届出済みの協定届は「事務従事者（営業事務）10人」の1行のみ</td></tr>
+<tr><td><span class="st remain">残る</span></td><td>8・10・14</td><td>年休は取れていない／パートの就業規則なし／育介規程は法改正未反映（いずれも菊地コメントで確認）</td></tr>
+<tr><td><span class="st remain">残る</span></td><td>11</td><td>久保朋子は外注（チラシ作成・月3万円固定）とのことだが、賃金台帳・年休管理簿に載っている</td></tr>
+</tbody></table></div>
+<div class="src">出典：サイボウズ メッセージ「和楽の監督署調査に向けて」（11/11 杉山）コメント1・2（菊地 薫 11/12）、コメント3（松本 良子 11/12）、36協定届（配送センター・R8.3.17受付）</div>
+</div></div>
 
 <h2>A. まだ揃っていない書類</h2>
 <div class="item"><div class="body">
 <ul>
   <li><b>調査票</b>（本状同封）が未記入。参考値：時間外＋休日労働の最多者＝山田圭一朗 4/21〜5/20 91:59 →「80時間超」1名</li>
-  <li><b>⑥</b> 変形労働時間制の関係書類（勤務割表等）</li>
+  <li><b>⑥</b> 変形労働時間制の関係書類（勤務割表等）<br><span class="est">→ 勤務シフト表はないが、ネットde顧問に登録あり（菊地コメント1）。出力して格納</span></li>
   <li><b>⑧</b> 労働条件通知書・労働者名簿</li>
   <li><b>⑩</b> 短時間・有期労働者チェックリスト（別添1）</li>
   <li><b>⑫</b> 健康診断結果個人票（2年分）</li>
   <li><b>⑬</b> 36協定の限度時間を超えた労働者への健康・福祉確保措置の実施記録</li>
   <li>就業規則・給与規程・育児介護休業規程の<b>届出控（受付印）</b></li>
 </ul>
-<div class="src">出典：Googleドライブ「労働条件等の調査」フォルダの格納状況（⑥⑧⑩⑫⑬は空）、調査通知「3 持参いただくもの」</div>
+<div class="src">出典：Googleドライブ「労働条件等の調査」フォルダの格納状況（⑥⑧⑩⑫⑬は空）、調査通知「3 持参いただくもの」、菊地コメント1（9）</div>
 </div></div>
 
 <h2>B. 結果に直結する問題</h2>
 
 <div class="item">
-<header><span class="no">1</span><span class="t">山田圭一朗（Bakery社員）の時間外労働の不払い</span><span class="tag hi">未払賃金</span></header>
+<header><span class="no">1</span><span class="t">山田圭一朗（Bakery社員）の時間外労働の不払い</span><span class="tag hi">未払賃金</span><span class="st remain">残る</span></header>
 <div class="body">
 <div class="tbl-wrap"><table>
-<tr><th>期間</th><th>法定時間外（勤怠）</th><th>うち普通残業</th><th>賃金台帳の時間外支給</th></tr>
+<tbody><tr><th>期間</th><th>法定時間外（勤怠）</th><th>うち普通残業</th><th>賃金台帳の時間外支給</th></tr>
 <tr><td>4/21〜5/20</td><td class="num">81:16</td><td class="num">50:30</td><td>なし（休出のみ）</td></tr>
 <tr><td>5/21〜6/20</td><td class="num">42:29</td><td class="num">42:29</td><td>なし</td></tr>
 <tr><td>6/21〜7/20</td><td class="num">51:20</td><td class="num">51:20</td><td>なし（休出のみ）</td></tr>
@@ -90,17 +118,22 @@
 <tr><td>8/21〜9/20</td><td class="num">51:07</td><td class="num">51:07</td><td>なし</td></tr>
 <tr><td>9/21〜10/20</td><td class="num">47:44</td><td class="num">47:44</td><td>なし</td></tr>
 <tr><th>合計</th><th></th><th class="num">291:42</th><th></th></tr>
-</table></div>
+</tbody></table></div>
 <ul>
   <li>6/21〜7/20の法定休日労働8:00を「所定休出」（×1.25）で支給（法定休日は×1.35）</li>
   <li>推定未払額：<b>約118万円</b> <span class="est">（推定：会社の休出単価4,034円×291:42で換算）</span></li>
   <li>管理監督者として扱っている場合、Bakery 36協定の過半数代表者（職名「製造」山田圭一朗）になれず、協定自体が無効となる</li>
 </ul>
-<div class="src">出典：勤怠PDF Bakery 6期間（山田圭一朗 集計欄）、賃金台帳 000092、36協定届（Bakery）</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  店長で管理監督者の扱い。休日も働いているので、その分は休日労働として手当を付けている。36協定の労働者代表が山田さん（店長）になっており、無効と指摘される可能性が高い。
+  <div class="rest"><b>残る点：</b>管理監督者として扱うなら36協定（Bakery）が無効（→2）。管理監督者でないなら上表の時間外が不払い。どちらの場合も解消しない。</div>
+</div>
+<div class="src">出典：勤怠PDF Bakery 6期間（山田圭一朗 集計欄）、賃金台帳 000092、36協定届（Bakery）、菊地コメント1（1・2）・コメント2</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">2</span><span class="t">Bakery 36協定の超過</span><span class="tag hi">36協定違反</span></header>
+<header><span class="no">2</span><span class="t">Bakery 36協定の超過</span><span class="tag hi">36協定違反</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>山田圭一朗 4/21〜5/20：時間外＋休日 <b>91:59</b>（特別条項の上限 月80時間超）</li>
@@ -108,54 +141,74 @@
   <li>月45時間超（特別条項発動）は4/21以降で<b>5回</b>。協定年度（R8.3.21起算）の上限6回まで残り1回（3/21〜4/20も45時間超なら残り0回）</li>
   <li>協定期間はR8.3.21〜だが受付はR8.4.1 → 3/21〜3/31の時間外・休日労働には協定の効力なし</li>
 </ul>
-<div class="src">出典：36協定届（Bakery）、勤怠PDF Bakery 4/21〜10/20</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  労働者代表が店長の山田さんになっている（菊地コメント2）。
+  <div class="rest"><b>残る点：</b>上記の超過に加え、山田圭一朗を管理監督者として扱う限り、過半数代表者になれず協定自体が無効（→1）。</div>
+</div>
+<div class="src">出典：36協定届（Bakery）、勤怠PDF Bakery 4/21〜10/20、菊地コメント2</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">3</span><span class="t">松本晃（配送社員）の時間外労働の不払い</span><span class="tag hi">未払賃金</span></header>
+<header><span class="no">3</span><span class="t">松本晃（配送社員）の時間外労働の不払い</span><span class="tag hi">未払賃金</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>勤怠の普通残業：23:21／25:19／14:54／31:26／29:50／15:18（計<b>140:08</b>）</li>
   <li>賃金台帳は所定休日出勤分のみ支給、普通残業の支給なし</li>
   <li>推定未払額：<b>約30万円</b> <span class="est">（推定：所定休出単価2,150円×140:08で換算）</span></li>
 </ul>
-<div class="src">出典：勤怠PDF 配送センター 6期間（松本晃 集計欄）、賃金台帳 000007</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  役職手当を払う代わりに残業手当を付けていない。役職手当がみなし残業のような扱い。
+  <div class="rest"><b>残る点：</b>給与規程に役職手当を時間外手当に充てる定めがない（→12）。何時間分かは回答なし。早出を含めると定額残業の時間を超える月がある（菊地コメント2）。</div>
+</div>
+<div class="src">出典：勤怠PDF 配送センター 6期間（松本晃 集計欄）、賃金台帳 000007、菊地コメント1（3）・コメント2</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">4</span><span class="t">割増賃金の算定基礎から手当を除外</span><span class="tag hi">未払賃金</span></header>
+<header><span class="no">4</span><span class="t">割増賃金の算定基礎から手当を除外</span><span class="tag hi">未払賃金</span><span class="st remain">残る</span></header>
 <div class="body">
 <p style="margin:0 0 6px">給与規程9条2項：算定基準賃金＝「賃金から通勤手当を除いたもの」</p>
 <div class="tbl-wrap"><table>
-<tr><th>氏名</th><th>実際の単価</th><th>算定に入っていない手当</th></tr>
+<tbody><tr><th>氏名</th><th>実際の単価</th><th>算定に入っていない手当</th></tr>
 <tr><td>鈴木雅子</td><td class="num">1,382円</td><td>家族手当 5,000円</td></tr>
 <tr><td>鈴木秀之</td><td class="num">1,382円</td><td>家族手当 5,000円・住宅手当 10,000円（10月から営業手当 10,000円も）</td></tr>
 <tr><td>西島新次・兼子文男</td><td class="num">1,309円（10月支給分 1,345円）</td><td>営業手当（8月から家族・住宅手当も）</td></tr>
-</table></div>
+</tbody></table></div>
 <ul>
   <li>営業手当は法定の除外賃金に当たらない</li>
 </ul>
 <div class="est">月平均所定労働時間171.92時間は、松本晃の所定休出単価からの逆算による推定</div>
-<div class="src">出典：正社員給与規程9条、賃金台帳 000054・000002・000113・000114</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  西島さん・兼子さんの残業単価の基礎に営業手当が含まれていなかったが、みなし残業20時間分が付いていて超えていないのでOK。
+  <div class="rest"><b>残る点：</b>みなし残業（定額の時間外手当）の定めが給与規程にない（→12）。早出を含めると西島・兼子もみなし時間を超える月がある（菊地コメント2）。鈴木雅子・鈴木秀之の家族手当・住宅手当は回答なし。</div>
+</div>
+<div class="src">出典：正社員給与規程9条、賃金台帳 000054・000002・000113・000114、菊地コメント1（4、コメントでは「金子さん」表記）・コメント2</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">5</span><span class="t">休憩不足（6時間超で45分未満／8時間超で60分未満）計66日</span><span class="tag hi">労基法34条</span></header>
+<header><span class="no">5</span><span class="t">休憩不足（6時間超で45分未満／8時間超で60分未満）計66日</span><span class="tag hi">労基法34条</span><span class="st part">一部解消</span></header>
 <div class="body">
 <div class="tbl-wrap"><table>
-<tr><th>氏名</th><th>日数</th><th>氏名</th><th>日数</th></tr>
-<tr><td>渡邉ゆうこ</td><td class="num">27</td><td>松本晃</td><td class="num">3</td></tr>
+<tbody><tr><th>氏名</th><th>日数</th><th>氏名</th><th>日数</th></tr>
+<tr><td>渡邉ゆうこ</td><td class="num">27</td><td>松本晃</td><td class="num">3（入力ミス）</td></tr>
 <tr><td>細田良江</td><td class="num">8</td><td>大庭奈織</td><td class="num">2</td></tr>
 <tr><td>長野みなみ</td><td class="num">7</td><td>小松春江</td><td class="num">2</td></tr>
 <tr><td>横山木綿子</td><td class="num">7</td><td>仲本卓</td><td class="num">2</td></tr>
 <tr><td>武田実久</td><td class="num">4</td><td>山田圭一朗</td><td class="num">1</td></tr>
 <tr><td>三枝由佳</td><td class="num">3</td><td></td><td></td></tr>
-</table></div>
-<div class="src">出典：勤怠PDF 4/21〜10/20（休憩時間欄と総労働時間）</div>
+</tbody></table></div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  6時間を少し超えた程度。松本さんの休憩時間は入力ミスなので直してもらう。
+  <div class="rest"><b>残る点：</b>6時間を少しでも超えれば45分の休憩が必要で、松本晃以外の63日は残る。</div>
+</div>
+<div class="src">出典：勤怠PDF 4/21〜10/20（休憩時間欄と総労働時間）、菊地コメント1（5）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">6</span><span class="t">打刻と労働時間集計の乖離</span><span class="tag hi">労働時間把握</span></header>
+<header><span class="no">6</span><span class="t">打刻と労働時間集計の乖離</span><span class="tag hi">労働時間把握</span><span class="st remain">残る</span></header>
 <div class="body">
 <p style="margin:0 0 6px">乖離＝（退社打刻−出社打刻−休憩）−集計時間</p>
 <ul>
@@ -163,24 +216,34 @@
   <li>松本晃 月12〜21時間、兼子文男 月13〜19時間、西郷孝 月3〜13時間、西島新次 月7〜10時間</li>
   <li>残業日の休憩が1:15で控除されているが、就業規則26条の休憩は60分</li>
 </ul>
-<div class="src">出典：勤怠PDF 4/21〜10/20、就業規則26条</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  休憩1時間15分は実態どおりで、就業規則が違っていた。8:30より前の早出は付けないとしているが、鈴木さんは6時前後から働いている日が多い。鈴木さん以外の松本さん・兼子さん・西郷さん・西島さんも、早出を含めるとみなし残業時間を超える月がある。
+  <div class="rest"><b>残る点：</b>乖離のうち早出は実際に働いている時間とのことで、労働時間と判断されれば未払残業代（上記「約148万円」には含まれていない）と月100時間超（鈴木秀之 7/21〜8/20）になる。休憩1:15と就業規則26条（60分）の不一致も残る。</div>
+</div>
+<div class="src">出典：勤怠PDF 4/21〜10/20、就業規則26条、菊地コメント1（6）・コメント2</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">7</span><span class="t">配送センター36協定の対象業務</span><span class="tag hi">36協定</span></header>
+<header><span class="no">7</span><span class="t">配送センター36協定の対象業務</span><span class="tag hi">36協定</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>業務の種類は「事務従事者（営業事務）」10人のみ</li>
   <li>鈴木秀之（45:47／52:29／59:19）・松本晃（49:58／45:37／49:12）は所属「配送社員」で月45時間超が各3回。配送業務であれば協定の範囲外</li>
 </ul>
-<div class="src">出典：36協定届（配送センター）、賃金台帳 所属欄、勤怠PDF 配送センター</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  36協定について、事務の方に人数を入れてしまっていた（コメント原文「36協定に配送が入っていたいが、事務の方に人数を入れてしまっていた」）。
+  <div class="rest"><b>残る点：</b>届出済みの協定届（R8.3.17 沼津署受付）は、時間外・休日労働とも「事務従事者（営業事務）10人」の1行だけで、配送の業務は記載されていない。</div>
+</div>
+<div class="src">出典：36協定届（配送センター）、賃金台帳 所属欄、勤怠PDF 配送センター、菊地コメント1（7）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">8</span><span class="t">年次有給休暇の年5日取得義務違反（付与から1年経過分）</span><span class="tag hi">労基法39条7項</span></header>
+<header><span class="no">8</span><span class="t">年次有給休暇の年5日取得義務違反（付与から1年経過分）</span><span class="tag hi">労基法39条7項</span><span class="st remain">残る</span></header>
 <div class="body">
 <div class="tbl-wrap"><table>
-<tr><th>氏名</th><th>付与日</th><th>付与日数</th><th>取得日数</th></tr>
+<tbody><tr><th>氏名</th><th>付与日</th><th>付与日数</th><th>取得日数</th></tr>
 <tr><td>鈴木秀之</td><td>2024/11/01</td><td class="num">20</td><td class="num">4</td></tr>
 <tr><td>鈴木秀之</td><td>2025/11/01</td><td class="num">20</td><td class="num">2</td></tr>
 <tr><td>坂本英子</td><td>2025/04/01</td><td class="num">20</td><td class="num">4</td></tr>
@@ -188,66 +251,94 @@
 <tr><td>小松春江</td><td>2025/08/01</td><td class="num">15</td><td class="num">0</td></tr>
 <tr><td>鈴木雅子</td><td>2025/04/15</td><td class="num">18</td><td class="num">1</td></tr>
 <tr><td>山田圭一朗</td><td>2025/03/13</td><td class="num">11</td><td class="num">2</td></tr>
-</table></div>
+</tbody></table></div>
 <ul>
-  <li>西郷孝（入社2026/5/11）：本日11/11が初回付与日。管理簿に記載なし</li>
+  <li>西郷孝（入社2026/5/11）：11/11が初回付与日。管理簿に記載なし</li>
 </ul>
-<div class="src">出典：年次有給休暇管理簿、従業員情報一覧</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  有給は取れていない。
+</div>
+<div class="src">出典：年次有給休暇管理簿、従業員情報一覧、菊地コメント1（8）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">9</span><span class="t">1か月単位の変形労働時間制の不備</span><span class="tag mid">就業規則</span></header>
+<header><span class="no">9</span><span class="t">1か月単位の変形労働時間制の不備</span><span class="tag mid">就業規則</span><span class="st part">一部解消</span></header>
 <div class="body">
 <ul>
   <li>就業規則26条に変形期間の起算日がない</li>
   <li>30条「1か月7〜9日休」：31日の月に休日7日・1日8時間だと192時間となり、法定総枠177.1時間を超える</li>
   <li>勤務割表が保管されていない（⑥）</li>
 </ul>
-<div class="src">出典：就業規則26条・30条</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  起算日の記載はないが、21日起算でやっている。勤務シフト表はないが、ネットde顧問に登録されている。
+  <div class="rest"><b>残る点：</b>就業規則に起算日の記載がないこと、30条の休日数で法定総枠を超える月が生じること（回答なし）。勤務割表はネットde顧問から出力して⑥に格納。</div>
+</div>
+<div class="src">出典：就業規則26条・30条、菊地コメント1（9）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">10</span><span class="t">パート・契約社員の就業規則がない</span><span class="tag mid">労基法89条</span></header>
+<header><span class="no">10</span><span class="t">パート・契約社員の就業規則がない</span><span class="tag mid">労基法89条</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>就業規則3条で適用は正社員のみ。パート・契約社員の別規程はパートタイマー給与規程だけ（労働時間・休日・休暇・退職等の定めなし）</li>
   <li>パートタイマー給与規程3条は「月給又は日給」で、時給の定めなし</li>
 </ul>
-<div class="src">出典：就業規則2条・3条、パートタイマー給与規程3条</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  パートタイマーの就業規則はない。
+</div>
+<div class="src">出典：就業規則2条・3条、パートタイマー給与規程3条、菊地コメント1（10・14）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">11</span><span class="t">賃金台帳の記載不足</span><span class="tag mid">労基法108条</span></header>
+<header><span class="no">11</span><span class="t">賃金台帳の記載不足</span><span class="tag mid">労基法108条</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>久保朋子（配送パート）：毎月定額30,000円、出勤日数・労働時間の記載なし、勤怠データなし。年休管理簿では「退職者」扱い</li>
   <li>鈴木秀之・西郷孝・山田圭一朗：時間外労働時間数の記載なし</li>
 </ul>
-<div class="src">出典：賃金台帳 000006・000002・000117・000092、年次有給休暇管理簿</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  久保朋子さんはリモートの外注で、チラシを作ってもらっている。仕事の多い少ないにかかわらず月3万円固定支給。
+  <div class="rest"><b>残る点：</b>外注とのことだが、賃金台帳（000006・所属「配送パート」）に給与として載り、年休管理簿にも載っている。鈴木秀之・西郷孝・山田圭一朗の時間外労働時間数の記載なしは回答なし。</div>
+</div>
+<div class="src">出典：賃金台帳 000006・000002・000117・000092、年次有給休暇管理簿、菊地コメント1（11）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">12</span><span class="t">定額の時間外手当の根拠がない</span><span class="tag mid">未払リスク</span></header>
+<header><span class="no">12</span><span class="t">定額の時間外手当の根拠がない</span><span class="tag mid">未払リスク</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>給与規程に定額の時間外手当・営業手当の定めなし</li>
   <li>対象：鈴木秀之 46,000円、西島新次・兼子文男 44,000円、西郷孝 66,000円</li>
 </ul>
-<div class="src">出典：正社員給与規程2条、賃金台帳</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  松本さんは役職手当をみなし残業のように扱っている。西島さん・兼子さんはみなし残業20時間分が付いていて超えていない。鈴木さんは早出が労働時間とされれば未払残業代が発生する可能性があり、松本さん・兼子さん・西郷さん・西島さんも早出を含めるとみなし残業時間を超える月がある。
+  <div class="rest"><b>残る点：</b>給与規程に定めがないことは変わらない。鈴木秀之・西郷孝の手当が何時間分かは回答なし。</div>
+</div>
+<div class="src">出典：正社員給与規程2条、賃金台帳、菊地コメント1（3・4）・コメント2</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">13</span><span class="t">渡邉ゆうこの早出分の単価不足</span><span class="tag mid">未払賃金</span></header>
+<header><span class="no">13</span><span class="t">渡邉ゆうこの早出分の単価不足</span><span class="tag mid">未払賃金</span><span class="st done">解消</span></header>
 <div class="body">
 <ul>
   <li>勤怠で「法定時間外」6:00（7/21〜8/20）・4:00・4:00 → 台帳「時間外手当」7,500円・5,000円・5,000円</li>
   <li>1時間1,250円で、1,100円×1.25＝1,375円に届かない</li>
 </ul>
-<div class="src">出典：勤怠PDF Bakery 7/21〜10/20、賃金台帳 000096</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  早出に割増が付いていなかったが、その日の勤務は8時間未満だった。
+  <div class="rest"><b>確認が1点残る：</b>勤怠PDFが「法定時間外」として集計している理由（週40時間超など）。週の法定時間を超えていなければ、1時間1,250円は時給1,100円を上回るため不足はない。</div>
+</div>
+<div class="src">出典：勤怠PDF Bakery 7/21〜10/20、賃金台帳 000096、菊地コメント1（13）</div>
 </div></div>
 
 <div class="item">
-<header><span class="no">14</span><span class="t">育児・介護休業規程（R4.12.1施行版）に法改正が未反映</span><span class="tag low">育介法</span></header>
+<header><span class="no">14</span><span class="t">育児・介護休業規程（R4.12.1施行版）に法改正が未反映</span><span class="tag low">育介法</span><span class="st remain">残る</span></header>
 <div class="body">
 <ul>
   <li>子の看護休暇：対象が「小学校就学前」、勤続6か月未満を除外</li>
@@ -255,14 +346,17 @@
   <li>介護休暇：勤続6か月未満を除外</li>
   <li>3歳〜就学前の「柔軟な働き方を実現するための措置」の規定なし</li>
 </ul>
-<div class="src">出典：育児介護休業規程14〜16条・附則</div>
+<div class="follow">
+  <div class="fh">社内確認（11/12）</div>
+  育児介護休業規程は最新の法改正が反映されていない。
+</div>
+<div class="src">出典：育児介護休業規程14〜16条・附則、菊地コメント1（10・14）</div>
 </div></div>
 
 <footer>
   最低賃金：静岡県最低賃金 1,154円（令和8年10月15日発効）。10/15以降の分は昇給差額で1,160円以上を支払っていることを確認済み。<br>
-  出典資料：労働条件等の調査について（三基発）、就業規則、正社員給与規程、パートタイマー給与規程、育児介護休業規程、36協定届（Bakery／配送センター）、勤怠PDF（4/21〜10/20 計12ファイル）、賃金台帳.pdf、年次有給休暇管理簿.pdf、従業員情報一覧
+  出典資料：労働条件等の調査について（三基発）、就業規則、正社員給与規程、パートタイマー給与規程、育児介護休業規程、36協定届（Bakery／配送センター）、勤怠PDF（4/21〜10/20 計12ファイル）、賃金台帳.pdf、年次有給休暇管理簿.pdf、従業員情報一覧、サイボウズ メッセージ「和楽の監督署調査に向けて」コメント1〜3（11/12）
 </footer>
 
 </div>
-</body>
-</html>
+</body></html>
